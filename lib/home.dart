@@ -18,6 +18,16 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.grey,
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.notifications),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.person),
+          ),
+        ],
       ),
     );
   }
