@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../models/post.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
     Key? key,
@@ -10,6 +12,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<Post>? posts;
+  var isLoaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    //
+    getData();
+  }
+
+  getData() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: const Icon(Icons.person),
           ),
         ],
+      ),
+      body: ListView.builder(
+        itemCount: 20,
+        itemBuilder: ((context, index) => Container(
+              child: Text('Welcome'),
+            )),
       ),
     );
   }
