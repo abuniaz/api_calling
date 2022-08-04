@@ -1,3 +1,4 @@
+import 'package:api_calling/services/remote_service.dart';
 import 'package:flutter/material.dart';
 
 import '../models/post.dart';
@@ -22,7 +23,9 @@ class _MyHomePageState extends State<MyHomePage> {
     getData();
   }
 
-  getData() async {}
+  getData() async {
+    posts = await RemoteService().getPosts();
+  }
 
   @override
   Widget build(BuildContext context) {
