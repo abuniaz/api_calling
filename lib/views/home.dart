@@ -25,6 +25,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   getData() async {
     posts = await RemoteService().getPosts();
+    if (posts != null) {
+      setState(() {
+        isLoaded = true;
+      });
+    }
   }
 
   @override
@@ -46,11 +51,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: 20,
-        itemBuilder: ((context, index) => Container(
-              child: Text('Welcome'),
-            )),
+      body: Visibility(
+        visible: isLoaded,
+        child: ListView.builder(
+          itemCount: posts?.length,
+          itemBuilder: ((context, index) => Container(
+                color: Colors.white,
+                child: const Text('Welcome'),
+              )),
+        ),
       ),
     );
   }
