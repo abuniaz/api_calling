@@ -57,8 +57,11 @@ class _MyHomePageState extends State<MyHomePage> {
           itemCount: posts?.length,
           itemBuilder: ((context, index) => Container(
                 color: Colors.white,
-                child: const Text('Welcome'),
+                child: Text(posts![index].title),
               )),
+        ),
+        replacement: const Center(
+          child: CircularProgressIndicator(),
         ),
       ),
     );
