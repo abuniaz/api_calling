@@ -44,12 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: () {},
           icon: const Icon(Icons.notifications),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.person),
-          ),
-        ],
       ),
       body: Visibility(
         visible: isLoaded,
